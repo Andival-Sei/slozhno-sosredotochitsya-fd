@@ -17,7 +17,7 @@
 }
 
 .theme-light .page {
-	background-color: #fff1f7;
+  background-color: #fff1f7;
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
@@ -44,7 +44,7 @@
 }
 
 .theme-light .header__decorative {
-	display: none;
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,34 +56,33 @@
     --background-image: url(../images/cover-image-light.png);
   }
 
-	.theme-light .page {
-	background-color: #fff1f7;
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
+  .page {
+    background-color: #fff1f7;
+    /* Вам также нужно будет написать ряд подобных селекторов */
+  }
 
-.theme-light :is(.header__theme-menu-list, .section__title) {
-  color: var(--accent-text-color);
-}
+  .header__theme-menu-list,
+  .section__title {
+    color: var(--accent-text-color);
+  }
 
-.theme-light .header__theme-menu-button_active,
-.theme-light :is(.header, .footer)::before,
-.theme-light :is(.header, .footer)::after {
-  border-color: var(--accent-text-color);
-}
+  .header__theme-menu-button_active,
+  :is(.header, .footer)::before,
+  :is(.header, .footer)::after {
+    border-color: var(--accent-text-color);
+  }
 
-.theme-light
   .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: var(--accent-text-color-transparent);
-}
+    border-color: var(--accent-text-color-transparent);
+  }
 
-.theme-light
   .header__theme-menu-button:focus-visible:not(
-    .header__theme-menu-button_active
-  ) {
-  border-block-end-color: var(--accent-text-color);
-}
+      .header__theme-menu-button_active
+    ) {
+    border-block-end-color: var(--accent-text-color);
+  }
 
-.theme-light .header__decorative {
-	display: none;
-}
+  .header__decorative {
+    display: none;
+  }
 }
