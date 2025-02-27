@@ -16,44 +16,6 @@
   padding: 0 var(--space-s);
 }
 
-/* .header::before {
-  content: "";
-  position: absolute;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
-  inset-block-start: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inset-inline-end: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inline-size: 25px;
-  block-size: 24px;
-}
-
-.header::after {
-  content: "";
-  position: absolute;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
-  inset-block-end: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inset-inline-start: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inline-size: 25px;
-  block-size: 25px;
-} */
-
 :is(.header, .footer)::before {
   content: "";
   position: absolute;
@@ -304,44 +266,6 @@
     clamp(285px, calc(285px + (177 * var(--fluid-ratio-sm-md))), 462px)
     clamp(13px, calc(13px + (191 * var(--fluid-ratio-sm-md))), 204px);
 }
-
-/* .footer::before {
-  content: "";
-  position: absolute;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
-  inset-block-start: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inset-inline-end: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inline-size: 25px;
-  block-size: 24px;
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
-  inset-block-end: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inset-inline-start: clamp(
-    var(--space-s),
-    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
-    var(--space-m)
-  );
-  inline-size: 25px;
-  block-size: 25px;
-} */
 
 .footer__title {
   text-align: center;
