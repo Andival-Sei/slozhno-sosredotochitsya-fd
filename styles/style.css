@@ -16,7 +16,7 @@
   padding: 0 var(--space-s);
 }
 
-.header::before {
+/* .header::before {
   content: "";
   position: absolute;
   border-inline-end: 1px solid var(--accent-color);
@@ -52,6 +52,28 @@
   );
   inline-size: 25px;
   block-size: 25px;
+} */
+
+:is(.header, .footer)::before {
+  content: "";
+  position: absolute;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  inset-block-start: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inset-inline-end: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inline-size: 25px;
+  block-size: 24px;
+}
+
+:is(.header, .footer)::after {
+  content: "";
+  position: absolute;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+  inset-block-end: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inset-inline-start: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .header__decorative {
@@ -73,7 +95,7 @@
   position: absolute;
   display: block;
   border-radius: 100%;
-  box-shadow: 0 0 4px 2px #ff0070;
+  box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
   transform: translateY(-50%);
   inset-inline-end: -20px;
@@ -83,7 +105,7 @@
 }
 
 .header__decorative-text {
-  color: #ff0070;
+  color: var(--accent-color);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-base);
   line-height: 139%;
@@ -283,7 +305,7 @@
     clamp(13px, calc(13px + (191 * var(--fluid-ratio-sm-md))), 204px);
 }
 
-.footer::before {
+/* .footer::before {
   content: "";
   position: absolute;
   border-inline-end: 1px solid var(--accent-color);
@@ -319,7 +341,7 @@
   );
   inline-size: 25px;
   block-size: 25px;
-}
+} */
 
 .footer__title {
   text-align: center;
@@ -425,10 +447,6 @@
     inline-size: 100%;
     block-size: 100%;
   }
-
-  /* .gallery__list-item:nth-child(1) {
-  grid-column: span 2;
-} */
 
   .gallery__list-item:nth-child(1) {
     grid-area: sunset;

@@ -37,7 +37,7 @@
   --fluid-ratio-sm-md: (
     (100vw - var(--screen-sm)) / var(--screen-diff-sm-md)
   ); /* ((100vw - 375px) / 393) */
-  --fluid-ratio-md-lg: calc(
+  --fluid-ratio-md-lg: (
     (100vw - var(--screen-md)) / var(--screen-diff-md-lg)
   ); /* ((100vw - 768px) / 256) */
 }
