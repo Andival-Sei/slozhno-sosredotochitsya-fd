@@ -4,6 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+	font-family: var(--main-font);
 }
 
 body {
@@ -39,4 +40,8 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+	text-decoration: none;
+	background-color: inherit;
+	border: none;
 }
+
