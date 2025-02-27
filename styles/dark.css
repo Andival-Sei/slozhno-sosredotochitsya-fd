@@ -10,11 +10,11 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 
-	--accent-color: #ff0070;
-	--accent-text-color: #000028;
-	--main-title-color: #db00ff;
-	--text-color: #f1b2ce;
-	--background-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --accent-text-color: #000028;
+  --main-title-color: #db00ff;
+  --text-color: #f1b2ce;
+  --background-image: url(../images/cover-image-dark.png);
 }
 
 .theme-dark .page {
