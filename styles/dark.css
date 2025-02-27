@@ -17,6 +17,72 @@
   --background-image: url(../images/cover-image-dark.png);
 }
 
-/* .theme-dark .page { */
+.theme-dark .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
-/* } */
+  background-color: var(--background-color);
+}
+
+.theme-dark :is(.header__theme-menu-list, .section__title) {
+  color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button_active,
+.theme-dark .decorated-zone::before,
+.theme-dark .decorated-zone::after {
+  border-color: var(--accent-color);
+}
+
+.theme-dark
+  .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: var(--accent-color-transparent);
+}
+
+.theme-dark
+  .header__theme-menu-button:focus-visible:not(
+    .header__theme-menu-button_active
+  ) {
+  border-block-end-color: var(--accent-color);
+}
+
+.theme-dark .header__decorative {
+  display: block; /* Явно указываем, что элемент должен отображаться */
+}
+
+/* Добавьте медиа-запрос для системных предпочтений */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #ff0070;
+    --accent-color-transparent: rgba(255, 0, 112, 0.4);
+    --accent-text-color: #000028;
+    --main-title-color: #db00ff;
+    --text-color: #f1b2ce;
+    --background-image: url(../images/cover-image-dark.png);
+    --background-color: var(--accent-text-color);
+  }
+
+  /* Те же селекторы для предпочтений системы */
+  .header__theme-menu-list,
+  .section__title {
+    color: var(--accent-color);
+  }
+
+  .header__theme-menu-button_active,
+  .decorated-zone::before,
+  .decorated-zone::after {
+    border-color: var(--accent-color);
+  }
+
+  .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+    border-color: var(--accent-color-transparent);
+  }
+
+  .header__theme-menu-button:focus-visible:not(
+      .header__theme-menu-button_active
+    ) {
+    border-block-end-color: var(--accent-color);
+  }
+
+  .header__decorative {
+    display: block;
+  }
+}

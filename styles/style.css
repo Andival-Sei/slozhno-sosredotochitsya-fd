@@ -76,14 +76,14 @@
   content: "";
   position: absolute;
   display: block;
-  border-radius: 100%;
+  border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
   transform: translateY(-50%);
   inset-inline-end: -20px;
   inset-block-start: 50%;
-  inline-size: 9px;
-  block-size: 9px;
+  inline-size: 10px;
+  block-size: 10px;
 }
 
 .header__decorative-text {
@@ -230,6 +230,10 @@
   line-height: var(--line-height-base);
 }
 
+.section__text + .section__text {
+  margin-block-start: var(--space-s);
+}
+
 .section__link {
   position: relative;
   text-shadow: var(--shadow-small);
@@ -330,7 +334,7 @@
     gap: var(--space-m);
   }
 
-  .section:nth-child(1) {
+  .section--why {
     gap: var(--space-l);
   }
 
@@ -338,37 +342,34 @@
     margin: 0;
   }
 
-  .section:nth-of-type(3) .section__list {
+  .section--tips .section__list {
     padding-inline-start: 5px;
   }
 
-  .section:not(:nth-of-type(2)):not(.gallery) .section__title {
+  .section:not(.section--factors):not(.gallery) .section__title {
     grid-column: 1 / 2; /* Заголовок в первой колонке */
   }
-  .section:not(:nth-of-type(2)):not(.gallery) > *:not(.section__title) {
+  .section:not(.section--factors):not(.gallery) > *:not(.section__title) {
     grid-column: 2 / 4; /* Остальной контент в 2-й и 3-й колонках */
   }
 
   /* Особое поведение для второй секции*/
-  .section:nth-of-type(2) {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-m);
-  }
-  .section:nth-of-type(2) .section__title {
+
+  .section--factors .section__title {
     grid-column: 1 / 2; /* Заголовок в первой колонке */
     grid-row: 1 / 2; /* и в первой строке */
   }
-  .section:nth-of-type(2) > *:not(.section__title) {
+  .section--factors > *:not(.section__title) {
     grid-column: 1 / 4; /* Контент занимает все 3 колонки */
     grid-row: 2 / auto; /* и начинается со второй строки */
   }
 
-  .section.gallery .section__subtitle {
-    grid-column: 1 / -1;
+  .gallery .section__subtitle {
     margin: 0;
   }
 
-  .section.gallery > *:not(.section__subtitle) {
+  .gallery .section__subtitle,
+  .gallery > *:not(.section__subtitle) {
     grid-column: 1 / -1;
   }
 
@@ -383,14 +384,9 @@
       "tape    street  street";
     gap: var(--space-m);
     row-gap: 15px;
-    padding: 0;
-    list-style: none;
   }
 
-  .section.gallery .gallery__list-item .gallery__img {
-    display: block;
-    object-fit: cover;
-    inline-size: 100%;
+  .gallery__img {
     block-size: 100%;
   }
 
@@ -433,7 +429,6 @@
   }
 
   .header__theme-menu-list {
-    display: flex;
     flex-direction: row;
     gap: 11.5px;
   }
@@ -446,26 +441,22 @@
     margin-inline-end: var(--space-m);
   }
 
-  .section:nth-of-type(1) {
+  .section--why {
     gap: var(--space-m);
   }
 
-  .section:nth-of-type(2) > *:not(.section__title) {
-    grid-column: 1 / 4; /* Контент все еще занимает полную ширину */
-  }
-
-  .section:nth-of-type(2) .section__list {
+  .section--factors .section__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Создаем 3 равные колонки */
     gap: var(--space-m);
   }
 
-  .section:nth-of-type(2) .section__list-item {
+  .section--factors .section__list-item {
     grid-column: auto; /* Каждый элемент займет одну колонку */
     margin-block-end: 0; /* Убираем нижний отступ у элементов списка */
   }
 
-  .section:nth-of-type(3) .section__list {
+  .section--tips .section__list {
     padding-inline-start: 0;
   }
 }
