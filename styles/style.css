@@ -101,7 +101,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 11.5px;
+  gap: 10px;
   color: var(--accent-color);
 }
 
