@@ -55,4 +55,35 @@
     --text-color: var(--accent-text-color);
     --background-image: url(../images/cover-image-light.png);
   }
+
+	.theme-light .page {
+	background-color: #fff1f7;
+  /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+.theme-light :is(.header__theme-menu-list, .section__title) {
+  color: var(--accent-text-color);
+}
+
+.theme-light .header__theme-menu-button_active,
+.theme-light :is(.header, .footer)::before,
+.theme-light :is(.header, .footer)::after {
+  border-color: var(--accent-text-color);
+}
+
+.theme-light
+  .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: var(--accent-text-color-transparent);
+}
+
+.theme-light
+  .header__theme-menu-button:focus-visible:not(
+    .header__theme-menu-button_active
+  ) {
+  border-block-end-color: var(--accent-text-color);
+}
+
+.theme-light .header__decorative {
+	display: none;
+}
 }
