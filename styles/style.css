@@ -21,8 +21,16 @@
   position: absolute;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
-  inset-block-start: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
-  inset-inline-end: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inset-block-start: clamp(
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
+  );
+  inset-inline-end: clamp(
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
+  );
   inline-size: 25px;
   block-size: 24px;
 }
@@ -32,8 +40,16 @@
   position: absolute;
   border-inline-start: 1px solid var(--accent-color);
   border-block-end: 1px solid var(--accent-color);
-  inset-block-end: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
-  inset-inline-start: clamp(var(--space-s), calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))), var(--space-m));
+  inset-block-end: clamp(
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
+  );
+  inset-inline-start: clamp(
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
+  );
   inline-size: 25px;
   block-size: 25px;
 }
@@ -253,11 +269,13 @@
 }
 
 /* Стили для изображений */
-.section.gallery .gallery__list-item .gallery__img {
+.gallery__img {
   object-fit: cover; /* Если нужно сохранить пропорции и обрезать лишнее */
   inline-size: 100%;
   block-size: auto;
 }
+
+/* Footer ----------------------------------------------------------- */
 
 .footer {
   position: relative;
