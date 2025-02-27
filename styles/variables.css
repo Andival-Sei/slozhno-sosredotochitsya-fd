@@ -29,7 +29,6 @@
   /* Для расчетов */
   --screen-sm: 375px;
   --screen-md: 768px;
-  --screen-lg: 1024px;
   --screen-diff-sm-md: 393; /* 768px - 375px */
   --screen-diff-md-lg: 256; /* 1024px - 768px */
 
