@@ -23,8 +23,8 @@
 .decorated-zone::before {
   content: "";
   position: absolute;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--decoration-border-color);
+  border-block-start: 1px solid var(--decoration-border-color);
   inset-block-start: clamp(
     var(--space-s),
     calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
@@ -42,8 +42,8 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--decoration-border-color);
+  border-block-end: 1px solid var(--decoration-border-color);
   inset-block-end: clamp(
     var(--space-s),
     calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
@@ -59,6 +59,7 @@
 }
 
 .header__decorative {
+	display: var(--decorative-element-display);
   position: absolute;
   inset-block-start: clamp(
     var(--space-s),
@@ -75,7 +76,7 @@
 .header__decorative::after {
   content: "";
   position: absolute;
-  display: block;
+  display: var(--decorative-element-display);
   border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
@@ -106,7 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: var(--accent-color);
+  color: var(--menu-list-color);
 }
 
 .header__theme-menu-button {
@@ -120,12 +121,12 @@
 }
 
 .header__theme-menu-button_active {
-  border-color: var(--accent-color);
+  border-color: var(--button-active-color);
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: var(--accent-color-transparent);
+  border-color: var(--button-hover-color);
 }
 
 .header__theme-menu-button:focus-visible:not(
@@ -210,7 +211,7 @@
 
 .section__title {
   margin: 0 0 var(--space-m) 0;
-  color: var(--accent-color);
+  color: var(--title-color);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);

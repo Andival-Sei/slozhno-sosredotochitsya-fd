@@ -14,8 +14,18 @@
   --background-image: url(../images/cover-image-dark.png);
   --shadow: 4px 4px 0 var(--accent-color);
   --shadow-small: 2px 2px 0 var(--accent-color);
-
-	--background-color: var(--accent-text-color);
+  --decoration-border-color: var(
+    --accent-color
+  ); /* Цвет рамок декоративных элементов */
+  --menu-list-color: var(--accent-color); /* Цвет меню */
+  --title-color: var(--accent-color); /* Цвет заголовков секций */
+  --button-active-color: var(--accent-color); /* Цвет активной кнопки */
+  --button-hover-color: var(
+    --accent-color-transparent
+  ); /* Цвет при наведении */
+  --button-focus-color: var(--accent-color); /* Цвет при фокусе */
+  --background-color: var(--accent-text-color);
+  --decorative-element-display: block; /* Для темной темы */
 
   /* Типографика */
   --font-size-base: 18px;

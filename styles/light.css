@@ -14,39 +14,14 @@
   --main-title-color: #ffc2e6;
   --text-color: var(--accent-text-color);
   --background-image: url(../images/cover-image-light.png);
-
-	--background-color:#fff1f7;
-}
-
-.theme-light .page {
-  background-color: var(--background-color);
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
-
-.theme-light :is(.header__theme-menu-list, .section__title) {
-  color: var(--accent-text-color);
-}
-
-.theme-light .header__theme-menu-button_active,
-.theme-light .decorated-zone::before,
-.theme-light .decorated-zone::after {
-  border-color: var(--accent-text-color);
-}
-
-.theme-light
-  .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: var(--accent-text-color-transparent);
-}
-
-.theme-light
-  .header__theme-menu-button:focus-visible:not(
-    .header__theme-menu-button_active
-  ) {
-  border-block-end-color: var(--accent-text-color);
-}
-
-.theme-light .header__decorative {
-  display: none;
+  --decoration-border-color: var(--accent-text-color);
+  --title-color: var(--accent-text-color);
+  --decorative-element-display: none;
+  --background-color: #fff1f7;
+  --menu-list-color: var(--accent-text-color);
+  --button-active-color: var(--accent-text-color);
+  --button-hover-color: rgba(50, 49, 45, 0.4);
+  --button-focus-color: var(--accent-text-color);
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,37 +31,12 @@
     --main-title-color: #ffc2e6;
     --text-color: var(--accent-text-color);
     --background-image: url(../images/cover-image-light.png);
-
-		--background-color:#fff1f7;
-  }
-
-  .page {
-    background-color: var(--background-color);
-    /* Вам также нужно будет написать ряд подобных селекторов */
-  }
-
-  .header__theme-menu-list,
-  .section__title {
-    color: var(--accent-text-color);
-  }
-
-  .header__theme-menu-button_active,
-  .decorated-zone::before,
-  .decorated-zone::after {
-    border-color: var(--accent-text-color);
-  }
-
-  .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-    border-color: var(--accent-text-color-transparent);
-  }
-
-  .header__theme-menu-button:focus-visible:not(
-      .header__theme-menu-button_active
-    ) {
-    border-block-end-color: var(--accent-text-color);
-  }
-
-  .header__decorative {
-    display: none;
+    --decoration-border-color: var(--accent-text-color);
+    --title-color: var(--accent-text-color);
+    --menu-list-color: var(--accent-text-color);
+    --button-active-color: var(--accent-text-color);
+    --decorative-element-display: none;
+    --button-hover-color: rgba(50, 49, 45, 0.4);
+    --background-color: #fff1f7;
   }
 }
