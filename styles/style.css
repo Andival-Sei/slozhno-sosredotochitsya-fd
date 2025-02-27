@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-color: #000028;
+  /* background-color: #000028; */
   background-image: var(--background-image);
   background-position: center;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 }
 
 .header {
-  padding: 0 10px;
+  padding: 0 var(--space-s);
   position: relative;
   display: grid;
 }
@@ -20,14 +20,14 @@
   content: "";
   position: absolute;
   inset-block-start: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inset-inline-end: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inline-size: 25px;
   block-size: 24px;
@@ -39,14 +39,14 @@
   content: "";
   position: absolute;
   inset-block-end: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inset-inline-start: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inline-size: 25px;
   block-size: 25px;
@@ -57,13 +57,13 @@
 .header__decorative {
   position: absolute;
   inset-block-start: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inset-inline-end: clamp(
     38px,
-    calc(38px + (10 * ((100vw - 375px) / 393))),
+    calc(38px + (10 * var(--fluid-ratio-sm-md))),
     48px
   );
 }
@@ -92,7 +92,7 @@
 .header__theme-menu {
   margin-block-start: clamp(
     75px,
-    calc(75px + (117 * ((100vw - 375px) / 393))),
+    calc(75px + (117 * var(--fluid-ratio-sm-md))),
     192px
   );
   justify-items: end;
@@ -111,16 +111,30 @@
   font-size: var(--font-size-base);
   line-height: 1;
   text-transform: lowercase;
+  border: 1px solid transparent;
+	cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
+	pointer-events: none;
+}
+
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: var(--accent-color-transparent);
+}
+
+.header__theme-menu-button:focus-visible:not(
+    .header__theme-menu-button_active
+  ) {
+  outline: none;
+  border-block-end-color: var(--accent-color);
 }
 
 .header__title {
   margin-block-start: clamp(
     65px,
-    calc(65px + (108 * ((100vw - 375px) / 393))),
+    calc(65px + (108 * var(--fluid-ratio-sm-md))),
     173px
   );
   text-shadow: var(--shadow);
@@ -136,15 +150,15 @@
 .header__description-container {
   margin-block-start: clamp(
     55px,
-    calc(55px + (107 * ((100vw - 375px) / 393))),
+    calc(55px + (107 * var(--fluid-ratio-sm-md))),
     162px
   );
   margin-block-end: clamp(
     66px,
-    calc(66px + (117 * ((100vw - 375px) / 393))),
+    calc(66px + (117 * var(--fluid-ratio-sm-md))),
     183px
   );
-  /* max-width: clamp(355px, calc(355px + (9 * ((100vw - 375px) / 393))), 364px); */
+  /* max-width: clamp(355px, calc(355px + (9 * var(--fluid-ratio-sm-md))), 364px); */
 }
 
 .header__description {
@@ -161,9 +175,17 @@
 /* main -------------------------------------------------- */
 
 .main {
-  padding: clamp(40px, calc(40px + (20 * ((100vw - 375px) / 393))), 60px)
-    clamp(10px, calc(10px + (10 * ((100vw - 375px) / 393))), 20px)
-    clamp(35px, calc(35px + (20 * ((100vw - 375px) / 393))), 55px);
+  padding: clamp(
+      var(--space-l),
+      calc(var(--space-l) + (20 * var(--fluid-ratio-sm-md))),
+      60px
+    )
+    clamp(
+      var(--space-s),
+      calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+      var(--space-m)
+    )
+    clamp(35px, calc(35px + (20 * var(--fluid-ratio-sm-md))), 55px);
 }
 
 .section {
@@ -171,19 +193,19 @@
 }
 
 .section__list-item:not(:last-child) {
-  margin-block-end: 20px;
+  margin-block-end: var(--space-m);
 }
 
 .section:not(:last-child) {
   margin-block-end: clamp(
     50px,
-    calc(50px + (30 * ((100vw - 375px) / 393))),
+    calc(50px + (30 * var(--fluid-ratio-sm-md))),
     80px
   );
 }
 
 .section__title {
-  margin: 0 0 20px 0;
+  margin: 0 0 var(--space-m) 0;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -191,7 +213,7 @@
 }
 
 .section__subtitle {
-  margin-block-end: 10px;
+  margin-block-end: var(--space-s);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -206,13 +228,29 @@
 
 .section__link {
   text-shadow: var(--shadow-small);
+  position: relative;
+}
+
+.section__link:hover::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0; /* Расстояние от текста */
+  block-size: 1px;
+  background-color: currentColor; /* Цвет как у текста */
+}
+
+.section__link:focus-visible {
+  outline: 1px solid currentColor; /* Цвет как у текста, без скруглений */
+  outline-offset: 1px; /* Равномерный отступ для outline */
 }
 
 .section__description {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  margin-block-end: 20px;
+  margin-block-end: var(--space-m);
 }
 
 .section:has(.section__description) .section__subtitle {
@@ -239,24 +277,24 @@
 
 .footer {
   position: relative;
-  padding: clamp(286px, calc(286px + (177 * ((100vw - 375px) / 393))), 463px)
-    clamp(14px, calc(14px + (190 * ((100vw - 375px) / 393))), 204px)
-    clamp(285px, calc(285px + (177 * ((100vw - 375px) / 393))), 462px)
-    clamp(13px, calc(13px + (191 * ((100vw - 375px) / 393))), 204px);
+  padding: clamp(286px, calc(286px + (177 * var(--fluid-ratio-sm-md))), 463px)
+    clamp(14px, calc(14px + (190 * var(--fluid-ratio-sm-md))), 204px)
+    clamp(285px, calc(285px + (177 * var(--fluid-ratio-sm-md))), 462px)
+    clamp(13px, calc(13px + (191 * var(--fluid-ratio-sm-md))), 204px);
 }
 
 .footer::before {
   content: "";
   position: absolute;
   inset-block-start: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inset-inline-end: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inline-size: 25px;
   block-size: 24px;
@@ -268,14 +306,14 @@
   content: "";
   position: absolute;
   inset-block-end: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inset-inline-start: clamp(
-    10px,
-    calc(10px + (10 * ((100vw - 375px) / 393))),
-    20px
+    var(--space-s),
+    calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
+    var(--space-m)
   );
   inline-size: 25px;
   block-size: 25px;
@@ -292,7 +330,7 @@
 
 @media (width >= 768px) {
   .header {
-    padding: 0 20px 0 0;
+    padding: 0 var(--space-m) 0 0;
   }
 
   .main-title {
@@ -302,17 +340,17 @@
   .header__description-container {
     margin-block-start: clamp(
       114px,
-      calc(162px + ((114 - 162) * ((100vw - 768px) / 256))),
+      calc(162px + ((114 - 162) * var(--fluid-ratio-md-lg))),
       162px
     );
     margin-block-end: clamp(
       134px,
-      calc(183px + ((134 - 183) * ((100vw - 768px) / 256))),
+      calc(183px + ((134 - 183) * var(--fluid-ratio-md-lg))),
       183px
     );
     /* max-width: clamp(
       364px,
-      calc(364px + (127 * ((100vw - 768px) / 256))),
+      calc(364px + (127 * var(--fluid-ratio-md-lg))),
       491px
     ); */
     inline-size: 50%;
@@ -321,11 +359,11 @@
 
   .section {
     grid-template-columns: 1fr 1fr 1fr; /* 3 колонки */
-    gap: 20px;
+    gap: var(--space-m);
   }
 
   .section:nth-child(1) {
-    gap: 40px;
+    gap: var(--space-l);
   }
 
   .section__title {
@@ -346,7 +384,7 @@
   /* Особое поведение для второй секции*/
   .section:nth-of-type(2) {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: var(--space-m);
   }
   .section:nth-of-type(2) .section__title {
     grid-column: 1 / 2; /* Заголовок в первой колонке */
@@ -374,7 +412,7 @@
       "sunset sunset ice-cream"
       "tape    books   ice-cream"
       "tape    street  street";
-    gap: 20px;
+    gap: var(--space-m);
     row-gap: 15px;
     list-style: none;
     padding: 0;
@@ -392,27 +430,31 @@
   grid-column: span 2;
 } */
 
-  .gallery__list-item.sunset {
+  .gallery__list-item:nth-child(1) {
     grid-area: sunset;
   }
-  .gallery__list-item.ice-cream {
+  .gallery__list-item:nth-child(2) {
     grid-area: ice-cream;
   }
-  .gallery__list-item.tape {
+  .gallery__list-item:nth-child(3) {
     grid-area: tape;
   }
-  .gallery__list-item.books {
+  .gallery__list-item:nth-child(4) {
     grid-area: books;
   }
-  .gallery__list-item.street {
+  .gallery__list-item:nth-child(5) {
     grid-area: street;
   }
 
   .footer {
-    padding: clamp(319px, calc(463px + (-144 * ((100vw - 768px) / 256))), 463px)
-      clamp(204px, calc(204px + (72 * ((100vw - 768px) / 256))), 276px)
-      clamp(319px, calc(462px + (-143 * ((100vw - 768px) / 256))), 462px)
-      clamp(204px, calc(204px + (73 * ((100vw - 768px) / 256))), 277px);
+    padding: clamp(
+        319px,
+        calc(463px + (-144 * var(--fluid-ratio-md-lg))),
+        463px
+      )
+      clamp(204px, calc(204px + (72 * var(--fluid-ratio-md-lg))), 276px)
+      clamp(319px, calc(462px + (-143 * var(--fluid-ratio-md-lg))), 462px)
+      clamp(204px, calc(204px + (73 * var(--fluid-ratio-md-lg))), 277px);
   }
 }
 
@@ -422,7 +464,7 @@
   }
 
   .header__theme-menu {
-    margin-block-start: 20px;
+    margin-block-start: var(--space-m);
     justify-items: center;
   }
 
@@ -437,11 +479,11 @@
   }
 
   .header__description-container {
-    padding-inline-end: 20px;
+    padding-inline-end: var(--space-m);
   }
 
   .section:nth-of-type(1) {
-    gap: 20px;
+    gap: var(--space-m);
   }
 
   .section:nth-of-type(2) > *:not(.section__title) {
@@ -451,7 +493,7 @@
   .section:nth-of-type(2) .section__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Создаем 3 равные колонки */
-    gap: 20px;
+    gap: var(--space-m);
   }
 
   .section:nth-of-type(2) .section__list-item {

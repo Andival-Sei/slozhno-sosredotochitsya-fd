@@ -9,8 +9,30 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: #ff8dcb;
+	--accent-text-color: #353430;
+  --main-title-color: #ffc2e6;
+  --text-color: var(--accent-text-color);
+  --background-image: url(../images/cover-image-light.png);
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
+	
+}
+
+.theme-light :is(.header__theme-menu-list, .section__title) {
+	color: var(--accent-text-color);
+}
+
+.theme-light :is(.header__theme-menu-button_active, .header::before, .header::after, .footer::before, .footer::after) {
+	border-color: var(--accent-text-color);
+}
+
+.theme-light .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+	border-color: var(--accent-text-color-transparent);
+}
+
+.theme-light .header__theme-menu-button:focus-visible:not(.header__theme-menu-button_active) {
+	border-block-end-color: var(--accent-text-color);
 }

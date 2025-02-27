@@ -5,7 +5,9 @@
 
 :root {
   --accent-color: #ff0070;
+	--accent-color-transparent: rgba(255, 0, 112, 0.4);
 	--accent-text-color: #000028;
+	--accent-text-color-transparent: rgba(0, 0, 40, 0.4);
 	--main-title-color: #db00ff;
 	--text-color: #f1b2ce;
   --main-font: "IBM Plex mono", monospace;
@@ -29,6 +31,10 @@
   --screen-sm: 375px;
   --screen-md: 768px;
   --screen-lg: 1024px;
-  --screen-diff-sm-md: 393px; /* 768px - 375px */
-  --screen-diff-md-lg: 256px; /* 1024px - 768px */
+  --screen-diff-sm-md: 393; /* 768px - 375px */
+  --screen-diff-md-lg: 256; /* 1024px - 768px */
+
+	  /* Формулы для адаптивных значений */
+  --fluid-ratio-sm-md: ((100vw - var(--screen-sm)) / var(--screen-diff-sm-md)); /* ((100vw - 375px) / 393) */
+  --fluid-ratio-md-lg: calc((100vw - var(--screen-md)) / var(--screen-diff-md-lg)); /* ((100vw - 768px) / 256) */
 }
