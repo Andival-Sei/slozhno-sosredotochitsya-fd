@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  /* background-color: #000028; */
+  background-color: var(--accent-text-color);
   background-image: var(--background-image);
   background-position: center;
   background-repeat: no-repeat;

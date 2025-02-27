@@ -16,9 +16,10 @@
   --background-image: url(../images/cover-image-light.png);
 }
 
-/* .theme-light .page { */
+.theme-light .page {
+	background-color: #fff1f7;
   /* Вам также нужно будет написать ряд подобных селекторов */
-/* } */
+}
 
 .theme-light :is(.header__theme-menu-list, .section__title) {
   color: var(--accent-text-color);
