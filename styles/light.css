@@ -14,10 +14,12 @@
   --main-title-color: #ffc2e6;
   --text-color: var(--accent-text-color);
   --background-image: url(../images/cover-image-light.png);
+
+	--background-color:#fff1f7;
 }
 
 .theme-light .page {
-  background-color: #fff1f7;
+  background-color: var(--background-color);
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
@@ -54,10 +56,12 @@
     --main-title-color: #ffc2e6;
     --text-color: var(--accent-text-color);
     --background-image: url(../images/cover-image-light.png);
+
+		--background-color:#fff1f7;
   }
 
   .page {
-    background-color: #fff1f7;
+    background-color: var(--background-color);
     /* Вам также нужно будет написать ряд подобных селекторов */
   }
 
