@@ -16,7 +16,11 @@
   padding: 0 var(--space-s);
 }
 
-:is(.header, .footer)::before {
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
   content: "";
   position: absolute;
   border-inline-end: 1px solid var(--accent-color);
@@ -35,7 +39,7 @@
   block-size: 24px;
 }
 
-:is(.header, .footer)::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   border-inline-start: 1px solid var(--accent-color);

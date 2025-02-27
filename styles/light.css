@@ -26,8 +26,8 @@
 }
 
 .theme-light .header__theme-menu-button_active,
-.theme-light :is(.header, .footer)::before,
-.theme-light :is(.header, .footer)::after {
+.theme-light .decorated-zone::before,
+.theme-light .decorated-zone::after {
   border-color: var(--accent-text-color);
 }
 
@@ -67,8 +67,8 @@
   }
 
   .header__theme-menu-button_active,
-  :is(.header, .footer)::before,
-  :is(.header, .footer)::after {
+  .decorated-zone::before,
+  .decorated-zone::after {
     border-color: var(--accent-text-color);
   }
 
