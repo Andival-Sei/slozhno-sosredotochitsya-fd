@@ -191,7 +191,7 @@
       calc(var(--space-s) + (10 * var(--fluid-ratio-sm-md))),
       var(--space-m)
     )
-    clamp(35px, calc(35px + (20 * var(--fluid-ratio-sm-md))), 55px);
+    clamp(35px, calc(35px + (20 * var(--fluid-ratio-sm-md))), 60px);
 }
 
 .section {
@@ -225,6 +225,10 @@
   line-height: var(--line-height-base);
 }
 
+.section__subtitle--type-regular {
+	font-weight: var(--font-weight-regular);
+}
+
 .section__text {
   color: var(--text-color);
   font-weight: var(--font-weight-regular);
@@ -256,19 +260,9 @@
   outline-offset: 1px; /* Равномерный отступ для outline */
 }
 
-.section__description {
-  margin-block-end: var(--space-m);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-}
-
-.section:has(.section__description) .section__subtitle {
-  font-weight: var(--font-weight-regular);
-}
-
 /* Сетка для галереи */
-.section.gallery .gallery__list {
+
+.gallery__list {
   grid-auto-rows: auto;
   padding: 0;
   list-style: none;
@@ -281,8 +275,10 @@
 /* Стили для изображений */
 .gallery__img {
   object-fit: cover; /* Если нужно сохранить пропорции и обрезать лишнее */
+	object-position: center; /* Центрируем изображение */
   inline-size: 100%;
   block-size: auto;
+	
 }
 
 /* Footer ----------------------------------------------------------- */
@@ -390,6 +386,7 @@
 
   .gallery__img {
     block-size: 100%;
+		display: block;
   }
 
   .gallery__list-item:nth-child(1) {
